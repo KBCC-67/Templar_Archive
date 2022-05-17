@@ -1,2 +1,13 @@
 # Templar_Archive
 为了保护百度贴吧的信息，该项目致力于自动化保存百度贴吧的内容
+
+本项目创立于Stellaris吧遭到爆吧风波之后不久，目前所有代码都指向保护Stellaris吧的数据。
+
+请注意：
+1.网页版百度贴吧只按照回复时间顺序展示最新的1~201页的主题帖，更早的帖子除非直接搜索否则无法找到
+2.官方的主题贴的概念：我们通常意义下单帖子
+3.官方的帖子的概念：每一个回复都叫一个帖子
+
+00_extract_content_ref.py 自动下载Stellaris吧的目录页面到content_ref文件夹下
+01_extract_archives.py 处理content_ref文件夹下所有html，将每个主题帖的名称、回复量、创建时间按照时间段不同保存在Templars文件夹下
+01_extract_detail.py 解析content_ref文件夹下所有html，将所有其中的主题帖链接一一访问，保存在detialed_htmls文件夹下
